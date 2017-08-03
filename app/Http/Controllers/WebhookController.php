@@ -10,7 +10,7 @@ class WebhookController extends Controller
 {
     public function index()
     {
-//        Log::info('api token: ' . config('services.telegram_bot.api_token'));
+        Log::info('api token: ' . config('services.telegram_bot.api_token'));
         Log::info('request: ' . json_encode($_REQUEST));
 
         /*
