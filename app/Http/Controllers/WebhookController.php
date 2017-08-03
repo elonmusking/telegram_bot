@@ -29,7 +29,9 @@ class WebhookController extends Controller
         $messageText = 'Hello world';
 
         $bot = new \TelegramBot\Api\BotApi(config('services.telegram_bot.api_token'));
-        
-        $bot->sendMessage($chatId, $messageText);
+
+        $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup(array(array("one", "two", "three")), true); // true for one-time keyboard
+
+        $bot->sendMessage($chatId, $messageText, null, false, null, $keyboard);
     }
 }
