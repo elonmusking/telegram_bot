@@ -7,8 +7,7 @@ class WebhookController extends Controller
 {
     public function index()
     {
-        echo env('TELEGRAM_API_TOKEN', 'no value');
-
-        return 'hello world';
+        print_r(config('services'));
+//        return 'hello world';
     }
 }
