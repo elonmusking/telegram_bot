@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/webhook', 'WebhookController@index');
+Route::post('/webhook', 'WebhookController@index');
