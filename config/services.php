@@ -37,6 +37,6 @@ return [
 
     'telegram_bot' => [
         'api_token' => env('TELEGRAM_API_TOKEN'),
-        'api_tracker' => ('TELEGRAM_API_TRACKER')
+        'api_tracker' => env('TELEGRAM_API_TRACKER')
     ]
 ];
