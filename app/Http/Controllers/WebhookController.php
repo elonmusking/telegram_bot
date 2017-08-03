@@ -30,7 +30,13 @@ class WebhookController extends Controller
 
         $bot = new \TelegramBot\Api\BotApi(config('services.telegram_bot.api_token'));
 
-        $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup(array(array("one", "two", "three")), true); // true for one-time keyboard
+        $keyboard = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
+            [
+                [
+                    ['text' => 'link', 'url' => 'https://core.telegram.org']
+                ]
+            ]
+        );
 
         $bot->sendMessage($chatId, $messageText, null, false, null, $keyboard);
     }
