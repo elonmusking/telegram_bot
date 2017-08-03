@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\Log;
+use TelegramBot\Api\Client;
 
 class WebhookController extends Controller
 {
-    protected $telegram;
-
-
     public function index()
     {
-        Log::info('Пишет в лог heroku');
+        $telegram = new Client(config('services.telegram_bot.api_token'), config('services.telegram_bot.api_tracker'));
 
-//        return 'hello world';
+        $telegram->command('ping', function ($message) use ($telegram) {
+            Log::info('chat_id: ' . $message->getChat()->getId());
+        });
+
+        $telegram->run();
     }
 }
