@@ -12,6 +12,8 @@ class WebhookController extends Controller
     {
         $telegram = new Client(config('services.telegram_bot.api_token'), config('services.telegram_bot.api_tracker'));
 
+        Log::info('request: ' . json_encode($_REQUEST));
+
         $telegram->command('ping', function ($message) use ($telegram) {
             Log::info('chat_id: ' . $message->getChat()->getId());
         });
