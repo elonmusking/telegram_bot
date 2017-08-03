@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Support\Facades\Log;
+
 class WebhookController extends Controller
 {
+    protected $telegram;
+
+
     public function index()
     {
-        print_r(config('services'));
+        Log::info('Пишет в лог heroku');
+
 //        return 'hello world';
     }
 }
