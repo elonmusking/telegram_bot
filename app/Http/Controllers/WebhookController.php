@@ -14,9 +14,11 @@ class WebhookController extends Controller
 
         Log::info('request: ' . json_encode($_REQUEST));
 
+        /*
         $telegram->command('ping', function ($message) use ($telegram) {
             Log::info('chat_id: ' . $message->getChat()->getId());
         });
+        */
 
         $telegram->run();
     }
