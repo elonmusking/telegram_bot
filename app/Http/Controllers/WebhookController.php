@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-class TestController extends Controller
+class WebhookController extends Controller
 {
     public function index()
     {
